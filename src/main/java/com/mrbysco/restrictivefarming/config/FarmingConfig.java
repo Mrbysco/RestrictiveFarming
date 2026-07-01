@@ -29,7 +29,7 @@ public class FarmingConfig {
 					.define("reduceGrowth", true);
 
 			growthGrowthReduction = builder
-					.comment("The percentage of growth reduction for crops in non-whitelisted biomes. (0.0 to 1.0)")
+					.comment("The percentage of growth reduction for crops in non-whitelisted biomes.")
 					.defineInRange("growthGrowthReduction", 0.5, 0.0, 1.0);
 
 			builder.pop();

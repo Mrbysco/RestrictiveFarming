@@ -2,6 +2,7 @@ package com.mrbysco.restrictivefarming.handler;
 
 import com.mrbysco.restrictivefarming.config.FarmingConfig;
 import com.mrbysco.restrictivefarming.datamap.FarmingDatamap;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -36,7 +37,7 @@ public class CropHandler {
 			if (!whitelist.contains(biome)) {
 				event.setCanceled(true);
 				if (entity instanceof ServerPlayer player) {
-					player.sendSystemMessage(Component.literal("You cannot place this crop in this biome."), true);
+					player.sendSystemMessage(Component.translatable("restrictive_farming.restricted_message").withStyle(ChatFormatting.RED), true);
 				}
 			}
 		}

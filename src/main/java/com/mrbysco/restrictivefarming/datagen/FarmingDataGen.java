@@ -20,5 +20,7 @@ public class FarmingDataGen {
 		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
 
 		gen.addProvider(true, new ModDataMapProvider(output, lookupProvider));
+
+		gen.addProvider(true, new FarmingLanguageProvider(output));
 	}
 }

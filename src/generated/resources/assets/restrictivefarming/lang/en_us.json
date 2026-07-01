@@ -1,0 +1,13 @@
+{
+  "restrictive_farming.configuration.defaultRestrictions": "Default Restrictions",
+  "restrictive_farming.configuration.defaultRestrictions.tooltip": "Whether to enable the default dimension restrictions for crops.",
+  "restrictive_farming.configuration.general": "General",
+  "restrictive_farming.configuration.general.tooltip": "General Settings",
+  "restrictive_farming.configuration.growthGrowthReduction": "Growth Reduction",
+  "restrictive_farming.configuration.growthGrowthReduction.tooltip": "The percentage of growth reduction for crops in non-whitelisted biomes.",
+  "restrictive_farming.configuration.reduceGrowth": "Reduce Growth",
+  "restrictive_farming.configuration.reduceGrowth.tooltip": "Whether to reduce crop growth in non-whitelisted biomes.",
+  "restrictive_farming.configuration.restrictPlacement": "Restrict Placement",
+  "restrictive_farming.configuration.restrictPlacement.tooltip": "Whether to restrict crop placement to whitelisted biomes.",
+  "restrictive_farming.restricted_message": "You cannot plant this crop in this biome!"
+}
