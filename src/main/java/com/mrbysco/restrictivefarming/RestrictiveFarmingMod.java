@@ -3,7 +3,8 @@ package com.mrbysco.restrictivefarming;
 import com.mojang.logging.LogUtils;
 import com.mrbysco.restrictivefarming.condition.FarmingConditions;
 import com.mrbysco.restrictivefarming.config.FarmingConfig;
-import net.minecraft.resources.Identifier;
+import com.mrbysco.restrictivefarming.datamap.FarmingDatamap;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -21,6 +22,7 @@ public class RestrictiveFarmingMod {
 	public RestrictiveFarmingMod(IEventBus eventBus, Dist dist, ModContainer container) {
 		container.registerConfig(ModConfig.Type.COMMON, FarmingConfig.commonSpec);
 
+		eventBus.addListener(FarmingDatamap::register);
 		FarmingConditions.CONDITION_CODECS.register(eventBus);
 
 		if (dist.isClient()) {
@@ -28,7 +30,7 @@ public class RestrictiveFarmingMod {
 		}
 	}
 
-	public static Identifier modLoc(String harvestableCrystals) {
-		return Identifier.fromNamespaceAndPath(MOD_ID, harvestableCrystals);
+	public static ResourceLocation modLoc(String harvestableCrystals) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, harvestableCrystals);
 	}
 }

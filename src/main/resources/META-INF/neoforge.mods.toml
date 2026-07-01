@@ -15,12 +15,12 @@ Allows you to restrict crop growth to certain biomes or reduce growth rates in n
 [[dependencies.restrictive_farming]]
 modId="minecraft"
 type="required"
-versionRange="[1.21.11,1.22)"
+versionRange="[1.21,1.22)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.restrictive_farming]]
 modId="neoforge"
 type="required"
-versionRange="[21.11.0-beta,)"
+versionRange="[21.1.1,)"
 ordering="NONE"
 side="BOTH"

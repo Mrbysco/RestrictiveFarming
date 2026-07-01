@@ -3,7 +3,7 @@ package com.mrbysco.restrictivefarming.datagen;
 import com.mrbysco.restrictivefarming.RestrictiveFarmingMod;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class FarmingLanguageProvider extends LanguageProvider {
 	public FarmingLanguageProvider(PackOutput packOutput) {

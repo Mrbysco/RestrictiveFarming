@@ -19,7 +19,7 @@ public class DefaultRestrictionsCondition implements ICondition {
 
 	@Override
 	public MapCodec<? extends ICondition> codec() {
-		return CODEC;
+		return FarmingConditions.DEFAULT_RESTRICTIONS.get();
 	}
 
 	@Override

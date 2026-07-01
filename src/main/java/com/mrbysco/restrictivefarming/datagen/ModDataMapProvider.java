@@ -25,7 +25,7 @@ public class ModDataMapProvider extends DataMapProvider {
 	@Override
 	protected void gather(@NotNull Provider provider) {
 		final var biomeLookup = provider.lookupOrThrow(Registries.BIOME);
-		final Builder<HolderSet<Biome>, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
+		final Builder<List<String>, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
 
 		List<Block> overworldCrops = List.of(
 				Blocks.WHEAT,
@@ -37,12 +37,11 @@ public class ModDataMapProvider extends DataMapProvider {
 				Blocks.MELON_STEM,
 				Blocks.PUMPKIN_STEM
 		);
-		HolderSet.Named<Biome> overworldBiomes = biomeLookup.getOrThrow(BiomeTags.IS_OVERWORLD);
 		for (Block crop : overworldCrops) {
-			whitelist.add(crop.builtInRegistryHolder(), overworldBiomes, false, DefaultRestrictionsCondition.INSTANCE);
+			whitelist.add(crop.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_OVERWORLD.location().toString()), false, DefaultRestrictionsCondition.INSTANCE);
 		}
 
-		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), biomeLookup.getOrThrow(BiomeTags.IS_NETHER), false, DefaultRestrictionsCondition.INSTANCE);
+		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_NETHER.toString()), false, DefaultRestrictionsCondition.INSTANCE);
 	}
 
 }

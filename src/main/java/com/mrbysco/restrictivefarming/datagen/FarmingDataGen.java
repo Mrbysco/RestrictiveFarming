@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 public class FarmingDataGen {
 
 	@SubscribeEvent
-	public static void dataGenEvent(GatherDataEvent.Client event) {
+	public static void dataGenEvent(GatherDataEvent event) {
 		DataGenerator gen = event.getGenerator();
 		PackOutput output = gen.getPackOutput();
 		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
