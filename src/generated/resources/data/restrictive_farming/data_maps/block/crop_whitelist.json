@@ -1,0 +1,76 @@
+{
+  "values": {
+    "minecraft:beetroots": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:carrots": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:cocoa": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:melon_stem": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:nether_wart": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_nether"
+    },
+    "minecraft:potatoes": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:pumpkin_stem": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:sweet_berry_bush": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    },
+    "minecraft:wheat": {
+      "neoforge:conditions": [
+        {
+          "type": "restrictive_farming:default_restrictions"
+        }
+      ],
+      "neoforge:value": "#minecraft:is_overworld"
+    }
+  }
+}

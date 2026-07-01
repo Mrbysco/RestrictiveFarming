@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+issueTrackerURL="https://github.com/Mrbysco/RestrictiveFarming/issues"
+license="MIT"
+
+[[mods]]
+modId="restrictive_farming"
+version="${file.jarVersion}"
+displayName="Restrictive Farming"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/restrictive-farming"
+authors="Mrbysco"
+description='''
+Allows you to restrict crop growth to certain biomes or reduce growth rates in non-whitelisted biomes.
+'''
+[[dependencies.restrictive_farming]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.11,1.22)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.restrictive_farming]]
+modId="neoforge"
+type="required"
+versionRange="[21.11.0-beta,)"
+ordering="NONE"
+side="BOTH"
