@@ -13,7 +13,7 @@ The mod comes with the following config options:
 * **reduceGrowth** - Whether to reduce crop growth in non-whitelisted biomes
 * **growthGrowthReduction** - The percentage of growth reduction for crops in non-whitelisted biomes (0 = 0%, 0.5 = 50%, 1.0 = 100%)
 
-Crop biomes can be configured through datapacks using the `crop_whitelist` datamap (Tutorial will be made)
+Crop biomes can be configured through datapacks using the `crop_whitelist` datamap (See [example datapack](https://github.com/Mrbysco/RestrictiveFarming/tree/main/example_datapack))
 
 ## License ##
 * Restrictive Farming is licensed under the MIT License
