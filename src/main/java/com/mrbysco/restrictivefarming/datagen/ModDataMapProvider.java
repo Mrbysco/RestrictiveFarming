@@ -41,7 +41,7 @@ public class ModDataMapProvider extends DataMapProvider {
 			whitelist.add(crop.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_OVERWORLD.location().toString()), false, DefaultRestrictionsCondition.INSTANCE);
 		}
 
-		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_NETHER.toString()), false, DefaultRestrictionsCondition.INSTANCE);
+		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_NETHER.location().toString()), false, DefaultRestrictionsCondition.INSTANCE);
 	}
 
 }

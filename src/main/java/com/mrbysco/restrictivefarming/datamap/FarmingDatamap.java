@@ -3,8 +3,6 @@ package com.mrbysco.restrictivefarming.datamap;
 import com.mojang.serialization.Codec;
 import com.mrbysco.restrictivefarming.RestrictiveFarmingMod;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.registries.datamaps.DataMapType;

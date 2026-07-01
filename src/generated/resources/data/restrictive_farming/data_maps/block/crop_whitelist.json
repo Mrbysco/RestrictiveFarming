@@ -47,7 +47,7 @@
         }
       ],
       "neoforge:value": [
-        "#TagKey[minecraft:worldgen/biome / minecraft:is_nether]"
+        "#minecraft:is_nether"
       ]
     },
     "minecraft:potatoes": {

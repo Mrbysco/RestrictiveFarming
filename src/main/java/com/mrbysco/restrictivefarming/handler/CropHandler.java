@@ -104,10 +104,20 @@ public class CropHandler {
 			if (biome.startsWith("#")) {
 				String tag = biome.substring(1);
 				var biomeLookup = registryAccess.lookupOrThrow(Registries.BIOME);
-				var named = biomeLookup.getOrThrow(TagKey.create(Registries.BIOME, ResourceLocation.tryParse(tag)));
-				named.forEach(test -> biomeKeys.add(test.unwrapKey().get()));
+				ResourceLocation biomeLoc = ResourceLocation.tryParse(tag);
+				if (biomeLoc == null) {
+					RestrictiveFarmingMod.LOGGER.error("Invalid biome tag: {}", tag);
+					continue;
+				}
+				var named = biomeLookup.getOrThrow(TagKey.create(Registries.BIOME, biomeLoc));
+				named.forEach(test -> test.unwrapKey().ifPresent(biomeKeys::add));
 			} else {
-				biomeKeys.add(ResourceKey.create(Registries.BIOME, ResourceLocation.tryParse(biome)));
+				ResourceLocation biomeLoc = ResourceLocation.tryParse(biome);
+				if (biomeLoc == null) {
+					RestrictiveFarmingMod.LOGGER.error("Invalid biome: {}", biome);
+					continue;
+				}
+				biomeKeys.add(ResourceKey.create(Registries.BIOME, biomeLoc));
 			}
 		}
 		return biomeKeys;

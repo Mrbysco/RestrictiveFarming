@@ -1,13 +1,31 @@
 {
   "values": {
-    "minecraft:beetroots": "#minecraft:is_overworld",
-    "minecraft:carrots": "#minecraft:is_overworld",
-    "minecraft:cocoa": "#minecraft:is_overworld",
-    "minecraft:melon_stem": "#minecraft:is_overworld",
-    "minecraft:nether_wart": "#minecraft:is_nether",
-    "minecraft:potatoes": "#minecraft:is_overworld",
-    "minecraft:pumpkin_stem": "#minecraft:is_overworld",
-    "minecraft:sweet_berry_bush": "#minecraft:is_overworld",
-    "minecraft:wheat": "#minecraft:is_overworld"
+    "minecraft:beetroots": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:carrots": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:cocoa": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:melon_stem": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:nether_wart": [
+      "#minecraft:is_nether"
+    ],
+    "minecraft:potatoes": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:pumpkin_stem": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:sweet_berry_bush": [
+      "#minecraft:is_overworld"
+    ],
+    "minecraft:wheat": [
+      "#minecraft:is_overworld"
+    ]
   }
 }
