@@ -95,6 +95,9 @@ public class CropHandler {
 	private static List<ResourceKey<Biome>> getBiomeWhitelist(RegistryAccess registryAccess, Block block) {
 		List<String> whitelist = block.builtInRegistryHolder().getData(FarmingDatamap.CROP_WHITELIST);
 		List<ResourceKey<Biome>> biomeKeys = new ArrayList<>();
+		if (whitelist == null) {
+			return biomeKeys;
+		}
 
 		for (String biome : whitelist) {
 			// If the biome is a tag, we need to get all biomes in that tag
