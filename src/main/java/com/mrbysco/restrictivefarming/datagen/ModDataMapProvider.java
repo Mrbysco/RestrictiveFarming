@@ -3,11 +3,8 @@ package com.mrbysco.restrictivefarming.datagen;
 import com.mrbysco.restrictivefarming.condition.DefaultRestrictionsCondition;
 import com.mrbysco.restrictivefarming.datamap.FarmingDatamap;
 import net.minecraft.core.HolderLookup.Provider;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -24,7 +21,6 @@ public class ModDataMapProvider extends DataMapProvider {
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void gather(@NotNull Provider provider) {
-		final var biomeLookup = provider.lookupOrThrow(Registries.BIOME);
 		final Builder<List<String>, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
 
 		List<Block> overworldCrops = List.of(
