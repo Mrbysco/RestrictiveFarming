@@ -2,6 +2,7 @@ package com.mrbysco.restrictivefarming.datagen;
 
 import com.mrbysco.restrictivefarming.condition.DefaultRestrictionsCondition;
 import com.mrbysco.restrictivefarming.datamap.FarmingDatamap;
+import com.mrbysco.restrictivefarming.datamap.WhitelistData;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -25,7 +26,7 @@ public class ModDataMapProvider extends DataMapProvider {
 	@Override
 	protected void gather(@NotNull Provider provider) {
 		final var biomeLookup = provider.lookupOrThrow(Registries.BIOME);
-		final Builder<HolderSet<Biome>, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
+		final Builder<WhitelistData, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
 
 		List<Block> overworldCrops = List.of(
 				Blocks.WHEAT,
@@ -39,10 +40,10 @@ public class ModDataMapProvider extends DataMapProvider {
 		);
 		HolderSet.Named<Biome> overworldBiomes = biomeLookup.getOrThrow(BiomeTags.IS_OVERWORLD);
 		for (Block crop : overworldCrops) {
-			whitelist.add(crop.builtInRegistryHolder(), overworldBiomes, false, DefaultRestrictionsCondition.INSTANCE);
+			whitelist.add(crop.builtInRegistryHolder(), new WhitelistData(overworldBiomes), false, DefaultRestrictionsCondition.INSTANCE);
 		}
 
-		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), biomeLookup.getOrThrow(BiomeTags.IS_NETHER), false, DefaultRestrictionsCondition.INSTANCE);
+		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), new WhitelistData(biomeLookup.getOrThrow(BiomeTags.IS_NETHER)), false, DefaultRestrictionsCondition.INSTANCE);
 	}
 
 }

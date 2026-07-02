@@ -9,5 +9,6 @@
   "restrictive_farming.configuration.reduceGrowth.tooltip": "Whether to reduce crop growth in non-whitelisted biomes.",
   "restrictive_farming.configuration.restrictPlacement": "Restrict Placement",
   "restrictive_farming.configuration.restrictPlacement.tooltip": "Whether to restrict crop placement to whitelisted biomes.",
-  "restrictive_farming.restricted_message": "You cannot plant this crop in this biome!"
+  "restrictive_farming.restricted_block_message": "You cannot place this block in this biome!",
+  "restrictive_farming.restricted_crop_message": "You cannot plant this crop in this biome!"
 }

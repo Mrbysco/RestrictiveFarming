@@ -1,10 +1,7 @@
 package com.mrbysco.restrictivefarming.datamap;
 
 import com.mrbysco.restrictivefarming.RestrictiveFarmingMod;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.RegistryCodecs;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -13,10 +10,10 @@ import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 
 @EventBusSubscriber
 public class FarmingDatamap {
-	public static final DataMapType<Block, HolderSet<Biome>> CROP_WHITELIST = DataMapType.builder(
+	public static final DataMapType<Block, WhitelistData> CROP_WHITELIST = DataMapType.builder(
 					RestrictiveFarmingMod.modLoc("crop_whitelist"),
-					Registries.BLOCK, RegistryCodecs.homogeneousList(Registries.BIOME))
-			.synced(RegistryCodecs.homogeneousList(Registries.BIOME), false)
+					Registries.BLOCK, WhitelistData.CODEC)
+			.synced(WhitelistData.CODEC, false)
 			.build();
 
 	@SubscribeEvent
