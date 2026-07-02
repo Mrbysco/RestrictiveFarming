@@ -12,7 +12,8 @@ public class FarmingLanguageProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		add("restrictive_farming.restricted_message", "You cannot plant this crop in this biome!");
+		add("restrictive_farming.restricted_crop_message", "You cannot plant this crop in this biome!");
+		add("restrictive_farming.restricted_block_message", "You cannot place this block in this biome!");
 
 		addConfig("general", "General", "General Settings");
 		addConfig("defaultRestrictions", "Default Restrictions", "Whether to enable the default dimension restrictions for crops.");

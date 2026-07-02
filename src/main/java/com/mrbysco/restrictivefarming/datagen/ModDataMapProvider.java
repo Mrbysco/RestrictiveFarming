@@ -2,9 +2,12 @@ package com.mrbysco.restrictivefarming.datagen;
 
 import com.mrbysco.restrictivefarming.condition.DefaultRestrictionsCondition;
 import com.mrbysco.restrictivefarming.datamap.FarmingDatamap;
+import com.mrbysco.restrictivefarming.datamap.WhitelistData;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -21,7 +24,7 @@ public class ModDataMapProvider extends DataMapProvider {
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void gather(@NotNull Provider provider) {
-		final Builder<List<String>, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
+		final Builder<WhitelistData, Block> whitelist = builder(FarmingDatamap.CROP_WHITELIST);
 
 		List<Block> overworldCrops = List.of(
 				Blocks.WHEAT,
@@ -34,10 +37,14 @@ public class ModDataMapProvider extends DataMapProvider {
 				Blocks.PUMPKIN_STEM
 		);
 		for (Block crop : overworldCrops) {
-			whitelist.add(crop.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_OVERWORLD.location().toString()), false, DefaultRestrictionsCondition.INSTANCE);
+			addCrop(crop, BiomeTags.IS_OVERWORLD, whitelist);
 		}
 
-		whitelist.add(Blocks.NETHER_WART.builtInRegistryHolder(), List.of("#" + BiomeTags.IS_NETHER.location().toString()), false, DefaultRestrictionsCondition.INSTANCE);
+		addCrop(Blocks.NETHER_WART, BiomeTags.IS_NETHER, whitelist);
+	}
+
+	private void addCrop(Block block, TagKey<Biome> biomeTag, Builder<WhitelistData, Block> whitelist) {
+		whitelist.add(block.builtInRegistryHolder(), new WhitelistData(List.of("#" + biomeTag.location())), false, DefaultRestrictionsCondition.INSTANCE);
 	}
 
 }

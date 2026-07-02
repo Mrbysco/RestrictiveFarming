@@ -9,7 +9,8 @@ public class FarmingConfig {
 		public final ModConfigSpec.BooleanValue defaultRestrictions;
 		public final ModConfigSpec.BooleanValue restrictPlacement;
 		public final ModConfigSpec.BooleanValue reduceGrowth;
-		public final ModConfigSpec.DoubleValue growthGrowthReduction;
+		public final ModConfigSpec.DoubleValue growthReduction;
+		public final ModConfigSpec.BooleanValue showRestrictedMessage;
 
 		Common(ModConfigSpec.Builder builder) {
 			//General settings
@@ -28,9 +29,13 @@ public class FarmingConfig {
 					.comment("Whether to reduce crop growth in non-whitelisted biomes.")
 					.define("reduceGrowth", true);
 
-			growthGrowthReduction = builder
+			growthReduction = builder
 					.comment("The percentage of growth reduction for crops in non-whitelisted biomes.")
-					.defineInRange("growthGrowthReduction", 0.5, 0.0, 1.0);
+					.defineInRange("growthReduction", 0.5, 0.0, 1.0);
+
+			showRestrictedMessage = builder
+					.comment("Whether to show a message when a player tries to place a crop in a non-whitelisted biome.")
+					.define("showRestrictedMessage", true);
 
 			builder.pop();
 		}

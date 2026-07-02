@@ -11,10 +11,11 @@ import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import java.util.List;
 
 public class FarmingDatamap {
-	public static final DataMapType<Block, List<String>> CROP_WHITELIST = DataMapType.builder(
+
+	public static final DataMapType<Block, WhitelistData> CROP_WHITELIST = DataMapType.builder(
 					RestrictiveFarmingMod.modLoc("crop_whitelist"),
-					Registries.BLOCK, Codec.STRING.listOf())
-			.synced(Codec.STRING.listOf(), false)
+					Registries.BLOCK, WhitelistData.CODEC)
+			.synced(WhitelistData.CODEC, false)
 			.build();
 
 	@SubscribeEvent

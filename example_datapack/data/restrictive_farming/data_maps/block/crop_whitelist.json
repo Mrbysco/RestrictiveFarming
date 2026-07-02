@@ -1,31 +1,67 @@
 {
   "values": {
-    "minecraft:beetroots": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:carrots": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:cocoa": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:melon_stem": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:nether_wart": [
-      "#minecraft:is_nether"
-    ],
-    "minecraft:potatoes": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:pumpkin_stem": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:sweet_berry_bush": [
-      "#minecraft:is_overworld"
-    ],
-    "minecraft:wheat": [
-      "#minecraft:is_overworld"
-    ]
+    "minecraft:beetroots": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:carrots": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:cocoa": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:melon_stem": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:nether_wart": {
+      "biomes": [
+        "#minecraft:is_nether"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:potatoes": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:pumpkin_stem": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:sweet_berry_bush": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    },
+    "minecraft:wheat": {
+      "biomes": [
+        "#minecraft:is_overworld"
+      ],
+      "growthReduction": -1.0,
+      "isCrop": true
+    }
   }
 }
