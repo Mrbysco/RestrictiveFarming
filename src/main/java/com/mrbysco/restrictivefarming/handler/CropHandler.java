@@ -38,7 +38,7 @@ public class CropHandler {
 		if (data != null) {
 			final BlockPos pos = event.getPos();
 			final Entity entity = event.getEntity();
-			Holder<Biome> biome = level.getBiome(pos);
+			ResourceKey<Biome> biome = level.getBiome(pos).unwrapKey().orElse(null);
 			List<ResourceKey<Biome>> whitelist = data.getBiomeWhitelist(level.registryAccess());
 			if (whitelist.stream().noneMatch(biome::equals)) {
 				event.setCanceled(true);
@@ -65,7 +65,7 @@ public class CropHandler {
 			float growthReduction = data.getReductionOrDefault();
 			List<ResourceKey<Biome>> whitelist = data.getBiomeWhitelist(level.registryAccess());
 			if (!whitelist.isEmpty()) {
-				Holder<Biome> biome = level.getBiome(pos);
+				ResourceKey<Biome> biome = level.getBiome(pos).unwrapKey().orElse(null);
 				if (whitelist.stream().noneMatch(biome::equals) && level.getRandom().nextFloat() < growthReduction) {
 					event.setResult(CropGrowEvent.Pre.Result.DO_NOT_GROW);
 				}
@@ -86,7 +86,7 @@ public class CropHandler {
 			float growthReduction = data.getReductionOrDefault();
 			List<ResourceKey<Biome>> whitelist = data.getBiomeWhitelist(level.registryAccess());
 			if (!whitelist.isEmpty()) {
-				Holder<Biome> biome = level.getBiome(pos);
+				ResourceKey<Biome> biome = level.getBiome(pos).unwrapKey().orElse(null);
 				if (whitelist.stream().noneMatch(biome::equals) && level.getRandom().nextFloat() < growthReduction) {
 					event.setCanceled(true);
 				}
